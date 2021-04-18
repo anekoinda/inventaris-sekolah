@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Barang as Obj;
 use App\Kategori;
+use App\Barang;
 use Session;
 
 class BarangController extends Controller
@@ -72,7 +73,7 @@ public function __construct()
         $obj->kode = $request->kode;
         $obj->barang = $request->barang;
         $obj->lokasi = $request->lokasi;
-        $obj->kategori = $request->kategori;
+        $obj->kategori()->attach($request->kategori);
         if (!empty($request->foto)) {
             $obj->foto = $name;            
         }
@@ -81,7 +82,6 @@ public function __construct()
         $obj->kondisi = $request->kondisi;
         $obj->sumber_dana = $request->sumber_dana;
         $save = $obj->save();
-
         return redirect('/'.$this->page);
     }
 
@@ -93,9 +93,9 @@ public function __construct()
      */
     public function show($id)
     {
-        $data = Obj::find($id);
-
-        return view($this->page.'/detail',compact('data'));
+        $kategoris = Kategori::all();
+        $data = Barang::with('barangKategori')->where('kode', $id)->first();
+        return view($this->page.'/detail',compact('data','kategoris'));
     }
 
     /**

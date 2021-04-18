@@ -40,7 +40,15 @@
                         </tr>
                         <tr>
                             <td>Kategori</td>
-                            <td>{{$data->kat->kategori}}</td>
+                            <td>@foreach($data->barangKategori as $katBrg)
+                                @php
+                                $kat = $kategoris->where('id', $katBrg->kategori_id)->first();
+                                @endphp
+                                <ul>
+                                    <li>{{$kat->kategori}}</li>
+                                </ul>
+                                @endforeach
+                            </td>
                         </tr>
                         <tr>
                             <td>Jumlah Barang</td>

@@ -1,6 +1,12 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+</head>
 @extends('layouts.app')
 
 @section('content')
+<link href="vendor/select2/dist/css/select2.min.css" rel="stylesheet" />
+<script src="vendor/select2/dist/js/select2.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -32,9 +38,21 @@
                             <label>Lokasi</label>
                             <input type="text" name="lokasi" class="form-control">
                         </div>
+                        <!--
                         <div class="form-group">
                             <label>Kategori</label>
                             <select class="form-control" name="kategori">
+                                <option value="">Silahkan Pilih</option>
+                                @foreach ($categories as $c)
+                                {{-- expr --}}
+                                <option value="{{$c->id}}">{{$c->kategori}}</option>
+                                @endforeach
+                            </select>
+                        </div> -->
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <select class="form-control js-example-basic-multiple" name="kategori[]"
+                                multiple="multiple">
                                 <option value="">Silahkan Pilih</option>
                                 @foreach ($categories as $c)
                                 {{-- expr --}}
@@ -64,4 +82,9 @@
     </div>
 </div>
 </div>
+<script>
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+</script>
 @endsection
