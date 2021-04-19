@@ -419,6 +419,7 @@ class ComposerStaticInit426580932c3a246207404ef91eed0202
         'App\\Http\\Middleware\\isAdmin' => __DIR__ . '/../..' . '/app/Http/Middleware/isAdmin.php',
         'App\\Http\\Middleware\\isPetugas' => __DIR__ . '/../..' . '/app/Http/Middleware/isPetugas.php',
         'App\\Kategori' => __DIR__ . '/../..' . '/app/Kategori.php',
+        'App\\KategoriBarang' => __DIR__ . '/../..' . '/app/KategoriBarang.php',
         'App\\Pegawai' => __DIR__ . '/../..' . '/app/Pegawai.php',
         'App\\PinjamBarang' => __DIR__ . '/../..' . '/app/PinjamBarang.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

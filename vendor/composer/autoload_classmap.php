@@ -29,6 +29,7 @@ return array(
     'App\\Http\\Middleware\\isAdmin' => $baseDir . '/app/Http/Middleware/isAdmin.php',
     'App\\Http\\Middleware\\isPetugas' => $baseDir . '/app/Http/Middleware/isPetugas.php',
     'App\\Kategori' => $baseDir . '/app/Kategori.php',
+    'App\\KategoriBarang' => $baseDir . '/app/KategoriBarang.php',
     'App\\Pegawai' => $baseDir . '/app/Pegawai.php',
     'App\\PinjamBarang' => $baseDir . '/app/PinjamBarang.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

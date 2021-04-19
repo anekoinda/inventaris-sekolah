@@ -124,6 +124,8 @@
     {{--     <script src="{{ asset('js/app.js') }}"></script> --}}
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">
         $.ajaxSetup({
     headers: {
@@ -135,6 +137,11 @@
             var act = $(this).attr('data-action');
             $("#form-confirm").attr('action',act);
         });
+    });
+    </script>
+    <script>
+        $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
     });
     </script>
     @stack('script')
