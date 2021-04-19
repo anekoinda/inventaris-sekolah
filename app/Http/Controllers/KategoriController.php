@@ -109,16 +109,4 @@ class KategoriController extends Controller
         return redirect('/'.$this->page);
     }
 
-
-    public function search(Request $request){
-        $q = $request->q;
-        $page=$this->page;
-        if (empty($q)) {
-            return redirect('/'.$page);
-        }
-        $data = Obj::where('kategori','LIKE','%'.$q.'%')->paginate(10);
-
-        $no=1;
-        return view($this->page.'/search',compact('data','no','page','q'));
-    }
 }
